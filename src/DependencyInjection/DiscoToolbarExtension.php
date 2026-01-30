@@ -14,23 +14,31 @@ declare(strict_types=1);
  * @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
  * @copyright 2025 Marcin Orlowski
  * @license   https://opensource.org/license/mit MIT
- * @link      https://github.com/MarcinOrlowski/php-symfony-discodevbar
+ * @link      https://github.com/MarcinOrlowski/php-discotoolbar-symfony
  *
  * ########################################################################## */
 
-namespace MarcinOrlowski\DiscoDevBar;
+namespace MarcinOrlowski\DiscoToolbar\DependencyInjection;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\Extension;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 /**
- * DiscoDevBar Bundle
+ * DiscoToolbar Extension
  *
- * Provides development toolbar/banner for worktree-based Symfony projects
+ * Loads bundle services configuration
  */
-class DiscoDevBarBundle extends Bundle
+class DiscoToolbarExtension extends Extension
 {
-    public function getPath(): string
+    public function load(array $configs, ContainerBuilder $container): void
     {
-        return \dirname(__DIR__);
+        $loader = new YamlFileLoader(
+            $container,
+            new FileLocator(\dirname(__DIR__) . '/../Resources/config')
+        );
+
+        $loader->load('services.yaml');
     }
 }

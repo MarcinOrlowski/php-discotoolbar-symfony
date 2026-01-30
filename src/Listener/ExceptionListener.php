@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MarcinOrlowski\DiscoDevBar\Listener;
+namespace MarcinOrlowski\DiscoToolbar\Listener;
 
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 use Symfony\Component\HttpKernel\Event\ResponseEvent;
@@ -11,10 +11,10 @@ use Symfony\Component\HttpKernel\KernelInterface;
 use Twig\Environment;
 
 /**
- * Injects DiscoDevBar into Symfony's exception debug pages in dev environment.
+ * Injects DiscoToolbar into Symfony's exception debug pages in dev environment.
  *
  * The exception debug pages are standalone HTML pages that don't use Twig templates,
- * so we need to inject the devbar via response modification.
+ * so we need to inject the toolbar via response modification.
  */
 #[AsEventListener(event: KernelEvents::RESPONSE, priority: -100)]
 class ExceptionListener
@@ -51,31 +51,31 @@ class ExceptionListener
             return;
         }
 
-        // Don't inject if devbar is already present (shouldn't happen, but be safe)
-        if (str_contains($content, 'disco-devbar')) {
+        // Don't inject if toolbar is already present (shouldn't happen, but be safe)
+        if (str_contains($content, 'disco-toolbar')) {
             return;
         }
 
         try {
-            $devbarHtml = $this->twig->render('@DiscoDevBar/devbar.html.twig');
+            $toolbarHtml = $this->twig->render('@DiscoToolbar/toolbar.html.twig');
         } catch (\Throwable) {
             // If rendering fails, don't break the exception page
             return;
         }
 
         // Extract <link> tags and inject them into <head>
-        preg_match_all('/<link[^>]*>/i', $devbarHtml, $linkMatches);
+        preg_match_all('/<link[^>]*>/i', $toolbarHtml, $linkMatches);
         $links = implode("\n", $linkMatches[0]);
-        $devbarDiv = preg_replace('/<link[^>]*>\s*/i', '', $devbarHtml);
+        $toolbarDiv = preg_replace('/<link[^>]*>\s*/i', '', $toolbarHtml);
 
         // Inject links and extra styling into <head>
         $extraStyle = '<style>.sf-error-header { margin-top: 40px; }</style>';
         $content = str_replace('</head>', $links . $extraStyle . '</head>', $content);
 
-        // Inject devbar div after <body> tag
+        // Inject toolbar div after <body> tag
         $content = preg_replace(
             '/(<body[^>]*>)/i',
-            '$1' . $devbarDiv,
+            '$1' . $toolbarDiv,
             $content,
             1
         );

@@ -2,11 +2,12 @@
 
 ## 2.0.0 (TBD)
 
+- [#047] Rebranded from DiscoDevBar to DiscoToolbar
 - [#041] Added Symfony 8 support
-- [#044] Renamed package to `marcin-orlowski/discodevbar-symfony`
+- [#044] Renamed package to `marcin-orlowski/disco-toolbar-symfony`
 - [#042] Added project logo!
 - [#035] Added customizable background colors for breathing stripes
-- [#033] Added close widget type to dismiss devbar
+- [#033] Added close widget type to dismiss toolbar
 
 ## 1.5.2 (2025-12-12)
 

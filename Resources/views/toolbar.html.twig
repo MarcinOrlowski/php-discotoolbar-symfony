@@ -1,0 +1,94 @@
+{# DiscoToolbar Template                                                           #}
+{# This template displays DiscoToolbar with links to various tools and information #}
+{# Show with `{% if app.environment == 'dev' %}` condition                         #}
+
+{% set toolbar_data = disco_toolbar_data() %}
+
+<link rel="stylesheet" href="{{ asset('bundles/discotoolbar/toolbar.css') }}">
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/{{ toolbar_data.fontAwesomeVersion|default('6.7.2') }}/css/all.min.css"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer" />
+
+<div class="disco-toolbar{% if toolbar_data.hasError %} disco-toolbar-error{% endif %}" style="--bg-color-light: {{ toolbar_data.bgColorLight }}; --bg-color-dark: {{ toolbar_data.bgColorDark }}">
+    <div class="disco-toolbar-content">
+        {% if toolbar_data.hasError %}
+            <div class="disco-toolbar-container-left">
+                <span class="disco-toolbar-widget">
+                    <a href="https://github.com/MarcinOrlowski/php-discotoolbar-symfony" class="disco-toolbar-link" target="_blank" title="Visit DiscoToolbar on GitHub">
+                        <span class="disco-toolbar-link-content">Disco Toolbar</span>
+                    </a>
+                </span>
+                <span class="disco-toolbar-separator">&middot;</span>
+                <span class="disco-toolbar-widget">
+                    <span class="disco-toolbar-text">v{{ toolbar_data.version ?? 'N/A' }} * {{ toolbar_data.errorMessage }}</span>
+                </span>
+            </div>
+        {% else %}
+            <div class="disco-toolbar-container-left {% if toolbar_data.leftExpand %}disco-toolbar-container-expand{% endif %}">
+                {% for widget in toolbar_data.left %}
+                    {% if not loop.first %}
+                        <span class="disco-toolbar-separator">&middot;</span>
+                    {% endif %}
+                    {% if widget.type == 'close' %}
+                        <span class="disco-toolbar-widget">
+                            <a href="#" class="disco-toolbar-link" onclick="document.querySelector('.disco-toolbar').remove(); return false;" title="Close Toolbar">
+                                <span class="disco-toolbar-link-content">✕</span>
+                            </a>
+                        </span>
+                    {% else %}
+                        <span class="disco-toolbar-widget {% if widget.expand %}disco-toolbar-widget-expand{% endif %}">
+                            <a href="{{ widget.url }}"
+                               class="disco-toolbar-link"
+                               {% if widget.target %}target="{{ widget.target }}"{% endif %}
+                               {% if widget.title %}title="{{ widget.title }}"{% endif %}>
+                                <span class="disco-toolbar-link-content">
+                                    {% if widget.icon %}
+                                        {% if widget.iconType.value == 'fa' %}
+                                            <i class="fa-solid {{ widget.icon }}"></i>
+                                        {% else %}
+                                            {{ widget.icon }}
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if widget.text %}{{ widget.text }}{% endif %}
+                                </span>
+                            </a>
+                        </span>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="disco-toolbar-container-right {% if toolbar_data.rightExpand %}disco-toolbar-container-expand{% endif %}">
+                {% for widget in toolbar_data.right %}
+                    {% if not loop.first %}
+                        <span class="disco-toolbar-separator">&middot;</span>
+                    {% endif %}
+                    {% if widget.type == 'close' %}
+                        <span class="disco-toolbar-widget">
+                            <a href="#" class="disco-toolbar-link" onclick="document.querySelector('.disco-toolbar').remove(); return false;" title="Close Toolbar">
+                                <span class="disco-toolbar-link-content">✕</span>
+                            </a>
+                        </span>
+                    {% else %}
+                        <span class="disco-toolbar-widget {% if widget.expand %}disco-toolbar-widget-expand{% endif %}">
+                            <a href="{{ widget.url }}"
+                               class="disco-toolbar-link"
+                               {% if widget.target %}target="{{ widget.target }}"{% endif %}
+                               {% if widget.title %}title="{{ widget.title }}"{% endif %}>
+                                <span class="disco-toolbar-link-content">
+                                    {% if widget.icon %}
+                                        {% if widget.iconType.value == 'fa' %}
+                                            <i class="fa-solid {{ widget.icon }}"></i>
+                                        {% else %}
+                                            {{ widget.icon }}
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if widget.text %}{{ widget.text }}{% endif %}
+                                </span>
+                            </a>
+                        </span>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</div>
