@@ -12,7 +12,8 @@ providing all-time access to essential development resources right from your bro
 streamlining your development workflow by keeping frequently-used tools, admin panels, and services
 just one click away.
 
-> **NOTE:** This package is also available for Laravel framework! See [project page](https://github.com/MarcinOrlowski/php-discodevbar-laravel) for more information!
+> **NOTE:** This package is also available for Laravel framework!
+> See [project page](https://github.com/MarcinOrlowski/php-discodevbar-laravel) for more information!
 
 ## What is DiscoDevBar?
 
