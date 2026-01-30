@@ -1,15 +1,32 @@
+
+#########################################################################
+ # 
+ #     █▀▀▄  ▀                     ▀▀█▀▀           ▀█  █
+ #     █  █ ▀█  ▄▀▀▄ ▄▀▀▄ ▄▀▀▄       █   ▄▀▀▄ ▄▀▀▄  █  █▀▀▄ ▄▀▀▄ █▄▀
+ #     █  █  █   ▀▄  █    █  █       █   █  █ █  █  █  █  █  ▄▄█ █
+ #     █▄▄▀ ▄█▄ ▀▄▄▀ ▀▄▄▀ ▀▄▄▀       █   ▀▄▄▀ ▀▄▄▀ ▄█▄ █▄▄▀ ▀▄▄▀ █
+ #
+ #########  Customizable developer toolbar for Symfony projects  ########
+ #
+ # @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
+ # @copyright 2025-2026 Marcin Orlowski
+ # @license   https://opensource.org/license/mit MIT
+ # @link      https://github.com/MarcinOrlowski/php-discotoolbar-symfony
+ #
+#########################################################################
+
 services:
     _defaults:
         autowire: true
         autoconfigure: true
 
-    MarcinOrlowski\DiscoDevBar\:
+    MarcinOrlowski\DiscoToolbar\:
         resource: '../../src/'
         exclude: '../../src/{DependencyInjection,Dto}'
 
-    MarcinOrlowski\DiscoDevBar\Service\DiscoDevBarService:
+    MarcinOrlowski\DiscoToolbar\Service\DiscoToolbarService:
         arguments:
             $projectDir: '%kernel.project_dir%'
 
-    MarcinOrlowski\DiscoDevBar\Twig\DiscoDevBarExtension:
+    MarcinOrlowski\DiscoToolbar\Twig\DiscoToolbarExtension:
         tags: ['twig.extension']

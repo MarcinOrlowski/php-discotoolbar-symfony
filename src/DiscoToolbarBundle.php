@@ -18,10 +18,19 @@ declare(strict_types=1);
  *
  * ******************************************************************* */
 
-namespace MarcinOrlowski\DiscoToolbar\Dto;
+namespace MarcinOrlowski\DiscoToolbar;
 
-enum IconType: string
+use Symfony\Component\HttpKernel\Bundle\Bundle;
+
+/**
+ * DiscoToolbar Bundle
+ *
+ * Provides customizable toolbar for Symfony projects
+ */
+class DiscoToolbarBundle extends Bundle
 {
-    case FONT_AWESOME = 'fa';
-    case TEXT = 'text';
+    public function getPath(): string
+    {
+        return \dirname(__DIR__);
+    }
 }

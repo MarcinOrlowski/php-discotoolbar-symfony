@@ -1,8 +1,8 @@
 {
-  "name": "symfony-discodevbar",
+  "name": "disco-toolbar-symfony",
   "version": "1.0.0",
   "private": true,
-  "description": "Development toolbar/banner for Symfony projects",
+  "description": "Customizable toolbar for Symfony projects",
   "scripts": {
     "lint:css": "stylelint \"Resources/public/**/*.css\"",
     "lint:css:fix": "stylelint \"Resources/public/**/*.css\" --fix",

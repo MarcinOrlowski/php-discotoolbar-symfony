@@ -1,15 +1,18 @@
 {
-  "name": "marcin-orlowski/symfony-discodevbar",
-  "description": "Development toolbar/banner for Symfony project",
+  "name": "marcin-orlowski/disco-toolbar-symfony",
+  "description": "Customizable toolbar for Symfony projects",
   "type": "symfony-bundle",
-  "version": "1.6.0",
+  "version": "2.0.0",
   "license": "MIT",
+  "provide": {
+    "marcin-orlowski/discotoolbar-symfony": "self.version",
+    "marcin-orlowski/discotoolbar": "self.version"
+  },
   "keywords": [
     "symfony",
-    "devbar",
-    "debug",
     "toolbar",
-    "worktree",
+    "disco",
+    "navigation",
     "development"
   ],
   "authors": [
@@ -21,20 +24,19 @@
   "minimum-stability": "stable",
   "require": {
     "php": ">=8.1",
-    "symfony/dependency-injection": "^6.4|^7.0",
-    "symfony/http-kernel": "^6.4|^7.0",
-    "symfony/yaml": "^6.4|^7.0",
-    "symfony/twig-bundle": "^6.4|^7.0"
+    "symfony/dependency-injection": "^6.4|^7.0|^8.0",
+    "symfony/http-kernel": "^6.4|^7.0|^8.0",
+    "symfony/yaml": "^6.4|^7.0|^8.0",
+    "symfony/twig-bundle": "^6.4|^7.0|^8.0"
   },
   "require-dev": {
     "phpstan/phpstan": "^2.0",
     "phpstan/phpstan-symfony": "^2.0",
-    "phpunit/phpunit": "^10.5",
     "squizlabs/php_codesniffer": "^3.13"
   },
   "autoload": {
     "psr-4": {
-      "MarcinOrlowski\\DiscoDevBar\\": "src/"
+      "MarcinOrlowski\\DiscoToolbar\\": "src/"
     }
   },
   "scripts": {
@@ -65,13 +67,6 @@
     "lint:md": [
       "Composer\\Config::disableProcessTimeout",
       "markdownlint --config .markdownlint.yaml --ignore vendor --ignore node_modules **/*.md"
-    ],
-    "test": [
-      "@composer test:unit"
-    ],
-    "test:unit": [
-      "Composer\\Config::disableProcessTimeout",
-      "@php vendor/bin/phpunit --group unit --display-warnings --display-deprecations --display-notices --display-errors --display-phpunit-deprecations"
     ]
   }
 }

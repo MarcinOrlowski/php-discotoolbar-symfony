@@ -2,25 +2,25 @@
 
 declare(strict_types=1);
 
-/* #############################################################################
+/* **********************************************************************
  *
- *   █▀▀▄  ▀                     █▀▀▄           █▀▀▄
- *   █  █ ▀█  ▄▀▀▄ ▄▀▀▄ ▄▀▀▄     █  █ ▄▀▀▄ █  █ █▀▀▄ ▄▀▀▄ █▄▀
- *   █  █  █   ▀▄  █    █  █     █  █ █▀▀  █  █ █  █  ▄▄█ █
- *   █▄▄▀ ▄█▄ ▀▄▄▀ ▀▄▄▀ ▀▄▄▀     █▄▄▀ ▀▄▄▀ ▀▄▀  █▄▄▀ ▀▄▄▀ █
+ *     █▀▀▄  ▀                     ▀▀█▀▀           ▀█  █
+ *     █  █ ▀█  ▄▀▀▄ ▄▀▀▄ ▄▀▀▄       █   ▄▀▀▄ ▄▀▀▄  █  █▀▀▄ ▄▀▀▄ █▄▀
+ *     █  █  █   ▀▄  █    █  █       █   █  █ █  █  █  █  █  ▄▄█ █
+ *     █▄▄▀ ▄█▄ ▀▄▄▀ ▀▄▄▀ ▀▄▄▀       █   ▀▄▄▀ ▀▄▄▀ ▄█▄ █▄▄▀ ▀▄▄▀ █
  *
- *     Customizable developer toolbar for Symfony projects
+ * *******  Customizable developer toolbar for Symfony projects  ********
  *
  * @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
- * @copyright 2025 Marcin Orlowski
+ * @copyright 2025-2026 Marcin Orlowski
  * @license   https://opensource.org/license/mit MIT
- * @link      https://github.com/MarcinOrlowski/php-symfony-discodevbar
+ * @link      https://github.com/MarcinOrlowski/php-discotoolbar-symfony
  *
- * ########################################################################## */
+ * ******************************************************************* */
 
-namespace MarcinOrlowski\DiscoDevBar\Dto;
+namespace MarcinOrlowski\DiscoToolbar\Dto;
 
-class DiscoDevBarData
+class DiscoToolbarData
 {
     /**
      * @param array<Widget> $left
