@@ -1,13 +1,4 @@
-```ascii
-▄▀▀▄             ▄▀█                    █▀▀▄  ▀                 █▀▀▄           █▀▀▄
-▀▄▄       █▀█▀▄  █   ▄▀▀▄ █▀▀▄          █  █ ▀█  ▄▀▀▄ ▄▀▀▄ ▄▀▀▄ █  █ ▄▀▀▄ █  █ █▀▀▄ ▄▀▀▄ █▄▀
-   █ █  █ █ █ █ ▀█▀  █  █ █  █ █  █     █  █  █   ▀▄  █    █  █ █  █ █▀▀  █  █ █  █  ▄▄█ █
-▀▄▄▀ ▀▄▄█ █   █  █   ▀▄▄▀ █  █ ▀▄▄█     █▄▄▀ ▄█▄ ▀▄▄▀ ▀▄▄▀ ▀▄▄▀ █▄▄▀ ▀▄▄▀ ▀▄▀  █▄▄▀ ▀▄▄▀ █
-     ▄▄▄▀                      ▄▄▄▀
-
-                        Customizable developer toolbar for Symfony projects
-```
-
+![img](img/banner.webp)
 
 [![Latest Stable Version](https://poser.pugx.org/marcin-orlowski/discodevbar-symfony/v)](https://packagist.org/packages/marcin-orlowski/discodevbar-symfony)
 [![Monthly Downloads](https://poser.pugx.org/marcin-orlowski/discodevbar-symfony/d/monthly)](https://packagist.org/packages/marcin-orlowski/discodevbar-symfony)
@@ -21,6 +12,9 @@ providing all-time access to essential development resources right from your bro
 streamlining your development workflow by keeping frequently-used tools, admin panels, and services
 just one click away.
 
+> **NOTE:** This package is also available for Laravel framework!
+> See [project page](https://github.com/MarcinOrlowski/php-discodevbar-laravel) for more information!
+
 ## What is DiscoDevBar?
 
 DiscoDevBar creates a persistent banner (typically placed at the top of your layout) that displays
@@ -28,7 +22,7 @@ during development. It's highly configurable via YAML, allowing you to create cu
 links to anything you need: admin panels, database tools, email catchers, API documentation, or
 any other development resource.
 
-![img](img/disco-devbar.png)
+![img](img/disco-devbar.webp)
 
 ### Perfect for Docker Environments
 
@@ -57,7 +51,7 @@ startup, ensuring all links always point to the correct ports and services.
 Install via Composer:
 
 ```bash
-composer require marcinorlowski/symfony-discodevbar --dev
+composer require --dev marcin-orlowski/discodevbar-symfony
 ```
 
 Register the bundle in `config/bundles.php`:
