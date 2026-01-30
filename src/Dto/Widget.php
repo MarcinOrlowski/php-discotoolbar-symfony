@@ -14,7 +14,7 @@ declare(strict_types=1);
  * @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
  * @copyright 2025-2026 Marcin Orlowski
  * @license   https://opensource.org/license/mit MIT
- * @link      https://github.com/MarcinOrlowski/php-discobar-symfony
+ * @link      https://github.com/MarcinOrlowski/php-discotoolbar-symfony
  *
  * ******************************************************************* */
 

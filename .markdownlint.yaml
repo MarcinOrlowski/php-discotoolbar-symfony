@@ -1,4 +1,18 @@
-# Example markdownlint YAML configuration with all properties set to their default value
+#########################################################################
+ # 
+ #     █▀▀▄  ▀                     ▀▀█▀▀           ▀█  █
+ #     █  █ ▀█  ▄▀▀▄ ▄▀▀▄ ▄▀▀▄       █   ▄▀▀▄ ▄▀▀▄  █  █▀▀▄ ▄▀▀▄ █▄▀
+ #     █  █  █   ▀▄  █    █  █       █   █  █ █  █  █  █  █  ▄▄█ █
+ #     █▄▄▀ ▄█▄ ▀▄▄▀ ▀▄▄▀ ▀▄▄▀       █   ▀▄▄▀ ▀▄▄▀ ▄█▄ █▄▄▀ ▀▄▄▀ █
+ #
+ #########  Customizable developer toolbar for Symfony projects  ########
+ #
+ # @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
+ # @copyright 2025-2026 Marcin Orlowski
+ # @license   https://opensource.org/license/mit MIT
+ # @link      https://github.com/MarcinOrlowski/php-discotoolbar-symfony
+ #
+#########################################################################
 
 # Default state for all rules
 default: true
