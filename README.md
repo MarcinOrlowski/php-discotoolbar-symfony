@@ -44,7 +44,7 @@ startup, ensuring all links always point to the correct ports and services.
 ## Requirements
 
 - PHP 8.1 or higher
-- Symfony 6.4+ or 7.0+
+- Symfony 6.4+, 7.0+, or 8.0+
 
 ## Installation
 
