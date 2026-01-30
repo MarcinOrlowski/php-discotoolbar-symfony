@@ -2,7 +2,7 @@
 
 # Changelog
 
-## 2.0.0 (TBD)
+## 2.0.0 (2026-01-30)
 
 - [#044] Renamed package to `marcin-orlowski/disco-toolbar-symfony`
 - [#047] Rebranded from DiscoDevBar to DiscoToolbar
