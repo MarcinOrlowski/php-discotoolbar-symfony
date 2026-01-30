@@ -1,8 +1,8 @@
 ![img](img/banner.webp)
 
-[![Latest Stable Version](https://poser.pugx.org/marcin-orlowski/symfony-discodevbar/v)](https://packagist.org/packages/marcin-orlowski/symfony-discodevbar)
-[![Monthly Downloads](https://poser.pugx.org/marcin-orlowski/symfony-discodevbar/d/monthly)](https://packagist.org/packages/marcin-orlowski/symfony-discodevbar)
-[![License](https://poser.pugx.org/marcin-orlowski/symfony-discodevbar/license)](https://packagist.org/packages/marcin-orlowski/symfony-discodevbar)
+[![Latest Stable Version](https://poser.pugx.org/marcin-orlowski/discodevbar-symfony/v)](https://packagist.org/packages/marcin-orlowski/discodevbar-symfony)
+[![Monthly Downloads](https://poser.pugx.org/marcin-orlowski/discodevbar-symfony/d/monthly)](https://packagist.org/packages/marcin-orlowski/discodevbar-symfony)
+[![License](https://poser.pugx.org/marcin-orlowski/discodevbar-symfony/license)](https://packagist.org/packages/marcin-orlowski/discodevbar-symfony)
 
 
 # Welcome!
@@ -50,7 +50,7 @@ startup, ensuring all links always point to the correct ports and services.
 Install via Composer:
 
 ```bash
-composer require marcinorlowski/symfony-discodevbar --dev
+composer require --dev marcin-orlowski/discodevbar-symfony
 ```
 
 Register the bundle in `config/bundles.php`:
