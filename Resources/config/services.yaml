@@ -3,13 +3,13 @@ services:
         autowire: true
         autoconfigure: true
 
-    MarcinOrlowski\DiscoDevBar\:
+    MarcinOrlowski\DiscoToolbar\:
         resource: '../../src/'
         exclude: '../../src/{DependencyInjection,Dto}'
 
-    MarcinOrlowski\DiscoDevBar\Service\DiscoDevBarService:
+    MarcinOrlowski\DiscoToolbar\Service\DiscoToolbarService:
         arguments:
             $projectDir: '%kernel.project_dir%'
 
-    MarcinOrlowski\DiscoDevBar\Twig\DiscoDevBarExtension:
+    MarcinOrlowski\DiscoToolbar\Twig\DiscoToolbarExtension:
         tags: ['twig.extension']

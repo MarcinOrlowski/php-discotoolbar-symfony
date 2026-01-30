@@ -14,26 +14,25 @@ declare(strict_types=1);
  * @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
  * @copyright 2025 Marcin Orlowski
  * @license   https://opensource.org/license/mit MIT
- * @link      https://github.com/MarcinOrlowski/php-symfony-discodevbar
+ * @link      https://github.com/MarcinOrlowski/php-discotoolbar-symfony
  *
  * ########################################################################## */
 
-namespace MarcinOrlowski\DiscoDevBar\Service;
+namespace MarcinOrlowski\DiscoToolbar\Service;
 
 use Composer\InstalledVersions;
-use MarcinOrlowski\DiscoDevBar\Dto\DiscoDevBarData;
-use MarcinOrlowski\DiscoDevBar\Dto\Widget;
+use MarcinOrlowski\DiscoToolbar\Dto\DiscoToolbarData;
+use MarcinOrlowski\DiscoToolbar\Dto\Widget;
 use Symfony\Component\Yaml\Yaml;
 
-class DiscoDevBarService
+class DiscoToolbarService
 {
     /**
      * List of supported config filenames (in order of preference)
      */
     private const CONFIG_FILES = [
-        '.disco-devbar.yaml',
-        '.disco-devbar.yml',
-        '.debug-banner.yaml',  // Legacy, kept for backward compatibility
+        '.disco.yaml',
+        '.disco.yml',
     ];
 
     /**
@@ -52,7 +51,7 @@ class DiscoDevBarService
     ) {
     }
 
-    public function getDiscoDevBarData(): DiscoDevBarData
+    public function getDiscoToolbarData(): DiscoToolbarData
     {
         $configPath = $this->findConfigFile();
         $version = $this->getVersion();
@@ -60,7 +59,7 @@ class DiscoDevBarService
         // Default: show error message when no config found
         if ($configPath === null) {
             $errorMessage = 'Config file not found: ' . self::CONFIG_FILES[0];
-            return new DiscoDevBarData(
+            return new DiscoToolbarData(
                 left:                [],
                 right:               [],
                 leftExpand:          false,
@@ -110,7 +109,7 @@ class DiscoDevBarService
         $bgColorLight = $config['bg_color_light'] ?? self::DEFAULT_BG_COLOR_LIGHT;
         $bgColorDark = $config['bg_color_dark'] ?? self::DEFAULT_BG_COLOR_DARK;
 
-        return new DiscoDevBarData(
+        return new DiscoToolbarData(
             left:                $leftWidgets,
             right:               $rightWidgets,
             leftExpand:          $this->hasExpandingWidget($leftWidgets),
@@ -183,7 +182,7 @@ class DiscoDevBarService
     private function getVersion(): string
     {
         try {
-            $version = InstalledVersions::getVersion('marcin-orlowski/symfony-discodevbar');
+            $version = InstalledVersions::getVersion('marcin-orlowski/disco-toolbar-symfony');
             return $version ?? 'dev';
         } catch (\Exception $e) {
             return 'dev';

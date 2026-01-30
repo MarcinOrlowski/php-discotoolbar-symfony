@@ -1,19 +1,18 @@
 {
-  "name": "marcin-orlowski/discodevbar-symfony",
-  "description": "Development toolbar/banner for Symfony project",
+  "name": "marcin-orlowski/disco-toolbar-symfony",
+  "description": "Customizable toolbar for Symfony projects",
   "type": "symfony-bundle",
   "version": "2.0.0",
   "license": "MIT",
   "provide": {
-    "marcin-orlowski/symfony-discodevbar": "self.version",
-    "marcin-orlowski/discodevbar": "self.version"
+    "marcin-orlowski/discotoolbar-symfony": "self.version",
+    "marcin-orlowski/discotoolbar": "self.version"
   },
   "keywords": [
     "symfony",
-    "devbar",
-    "debug",
     "toolbar",
-    "worktree",
+    "disco",
+    "navigation",
     "development"
   ],
   "authors": [
@@ -38,7 +37,7 @@
   },
   "autoload": {
     "psr-4": {
-      "MarcinOrlowski\\DiscoDevBar\\": "src/"
+      "MarcinOrlowski\\DiscoToolbar\\": "src/"
     }
   },
   "scripts": {

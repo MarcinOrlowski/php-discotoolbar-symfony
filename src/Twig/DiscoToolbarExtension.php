@@ -14,23 +14,23 @@ declare(strict_types=1);
  * @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
  * @copyright 2025 Marcin Orlowski
  * @license   https://opensource.org/license/mit MIT
- * @link      https://github.com/MarcinOrlowski/php-symfony-discodevbar
+ * @link      https://github.com/MarcinOrlowski/php-discotoolbar-symfony
  *
  * ########################################################################## */
 
-namespace MarcinOrlowski\DiscoDevBar\Twig;
+namespace MarcinOrlowski\DiscoToolbar\Twig;
 
-use MarcinOrlowski\DiscoDevBar\Service\DiscoDevBarService;
+use MarcinOrlowski\DiscoToolbar\Service\DiscoToolbarService;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
 /**
- * Twig extension that provides access to DiscoDevBar data
+ * Twig extension that provides access to DiscoToolbar data
  */
-class DiscoDevBarExtension extends AbstractExtension
+class DiscoToolbarExtension extends AbstractExtension
 {
     public function __construct(
-        private readonly DiscoDevBarService $discoDevBarService
+        private readonly DiscoToolbarService $discoToolbarService
     ) {
     }
 
@@ -42,18 +42,18 @@ class DiscoDevBarExtension extends AbstractExtension
     public function getFunctions(): array
     {
         return [
-            new TwigFunction('debug_banner_data', [
+            new TwigFunction('disco_toolbar_data', [
                 $this,
-                'getDiscoDevBarData',
+                'getDiscoToolbarData',
             ]),
         ];
     }
 
     /**
-     * Returns DiscoDevBar data for template rendering
+     * Returns DiscoToolbar data for template rendering
      */
-    public function getDiscoDevBarData(): \MarcinOrlowski\DiscoDevBar\Dto\DiscoDevBarData
+    public function getDiscoToolbarData(): \MarcinOrlowski\DiscoToolbar\Dto\DiscoToolbarData
     {
-        return $this->discoDevBarService->getDiscoDevBarData();
+        return $this->discoToolbarService->getDiscoToolbarData();
     }
 }

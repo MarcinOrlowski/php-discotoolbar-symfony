@@ -14,11 +14,11 @@ declare(strict_types=1);
  * @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
  * @copyright 2025 Marcin Orlowski
  * @license   https://opensource.org/license/mit MIT
- * @link      https://github.com/MarcinOrlowski/php-symfony-discodevbar
+ * @link      https://github.com/MarcinOrlowski/php-discotoolbar-symfony
  *
  * ########################################################################## */
 
-namespace MarcinOrlowski\DiscoDevBar\Dto;
+namespace MarcinOrlowski\DiscoToolbar\Dto;
 
 class Widget
 {
