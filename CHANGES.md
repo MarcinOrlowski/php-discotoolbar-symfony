@@ -2,6 +2,7 @@
 
 ## 2.0.0 (TBD)
 
+- [#041] Added Symfony 8 support
 - [#044] Renamed package to `marcin-orlowski/discodevbar-symfony`
 - [#042] Added project logo!
 - [#035] Added customizable background colors for breathing stripes
