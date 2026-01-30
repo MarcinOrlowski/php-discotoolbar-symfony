@@ -1,11 +1,19 @@
-##################################################################################
-#
-# Disco Toolbar
-#
-# @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
-# @copyright 2025 Marcin Orlowski
-#
-##################################################################################
+#########################################################################
+ # 
+ #     █▀▀▄  ▀                     ▀▀█▀▀           ▀█  █
+ #     █  █ ▀█  ▄▀▀▄ ▄▀▀▄ ▄▀▀▄       █   ▄▀▀▄ ▄▀▀▄  █  █▀▀▄ ▄▀▀▄ █▄▀
+ #     █  █  █   ▀▄  █    █  █       █   █  █ █  █  █  █  █  ▄▄█ █
+ #     █▄▄▀ ▄█▄ ▀▄▄▀ ▀▄▄▀ ▀▄▄▀       █   ▀▄▄▀ ▀▄▄▀ ▄█▄ █▄▄▀ ▀▄▄▀ █
+ #
+ #########  Customizable developer toolbar for Symfony projects  ########
+ #
+ # @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
+ # @copyright 2025-2026 Marcin Orlowski
+ # @license   https://opensource.org/license/mit MIT
+ # @link      https://github.com/MarcinOrlowski/php-discobar-symfony
+ #
+#########################################################################
+
 
 includes:
   - vendor/phpstan/phpstan-symfony/extension.neon

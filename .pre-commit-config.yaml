@@ -1,28 +1,34 @@
-##################################################################################
-#
-# Laravel API Response Builder PHPStan config file
-#
-# @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
-# @copyright 2016-2025 Marcin Orlowski
-# @license   http://www.opensource.org/licenses/mit-license.php MIT
-# @link      https://github.com/MarcinOrlowski/laravel-api-response-builder
-#
-##################################################################################
+#########################################################################
+ # 
+ #     █▀▀▄  ▀                     ▀▀█▀▀           ▀█  █
+ #     █  █ ▀█  ▄▀▀▄ ▄▀▀▄ ▄▀▀▄       █   ▄▀▀▄ ▄▀▀▄  █  █▀▀▄ ▄▀▀▄ █▄▀
+ #     █  █  █   ▀▄  █    █  █       █   █  █ █  █  █  █  █  ▄▄█ █
+ #     █▄▄▀ ▄█▄ ▀▄▄▀ ▀▄▄▀ ▀▄▄▀       █   ▀▄▄▀ ▀▄▄▀ ▄█▄ █▄▄▀ ▀▄▄▀ █
+ #
+ #########  Customizable developer toolbar for Symfony projects  ########
+ #
+ # @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
+ # @copyright 2025-2026 Marcin Orlowski
+ # @license   https://opensource.org/license/mit MIT
+ # @link      https://github.com/MarcinOrlowski/php-discobar-symfony
+ #
+#########################################################################
+
 #
 # Using pre-commit hooks #
 #
 # To improve quality of your commit, it's recommended to use "pre-commit"
-# (http://pre-commit.com) hooks, that will block  your commits unless all tests
-# pass. This project comes with template configuration file
-# `.pre-commit-config.yaml.dist`.
+# (http://pre-commit.com) hooks, that will block your commits unless all tests pass.
 #
 # Brief installation instruction:
 #
-# * Ensure you got Python installed
-# * Install pre-commit: `pip install pre-commit`
-# * Go to your Logisim-evolution source code root directory
-# * Copy provided config file template: `cp .pre-commit-config.yaml.dist .pre-commit-config.yaml`
+# * Install pipx: https://pypi.org/project/pipx/
+# * Run `pipx ensurepath`
+# * Install pre-commit: `pipx install pre-commit`
 # * Plug hooks into Git pipeline: `pre-commit install`
+# * Update hooks to most recent version: `pre-commit autoupdate`
+#
+# To commit with hooks not run, use `--no-verify` while doing `git commit`
 #
 # See `pre-commit` official installation docs too: https://pre-commit.com/#install
 #

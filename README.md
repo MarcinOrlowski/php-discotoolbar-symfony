@@ -222,6 +222,6 @@ Override the default template by creating:
 
 ## License
 
-- Written and copyrighted &copy;2025 by Marcin Orlowski <mail (#) marcinorlowski (.) com>
+- Written and copyrighted &copy;2025-2026 by Marcin Orlowski <mail (#) marcinorlowski (.) com>
 - DiscoToolbar is open-source software licensed under
   the [MIT license](http://opensource.org/licenses/MIT)
