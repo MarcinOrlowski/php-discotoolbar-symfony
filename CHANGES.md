@@ -1,7 +1,9 @@
 # Changelog
 
-## 1.6.0 (TBD)
+## 2.0.0 (TBD)
 
+- [#044] Renamed package to `marcin-orlowski/discodevbar-symfony`
+- [#042] Added project logo!
 - [#035] Added customizable background colors for breathing stripes
 - [#033] Added close widget type to dismiss devbar
 

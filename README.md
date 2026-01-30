@@ -9,9 +9,9 @@
 ```
 
 
-[![Latest Stable Version](https://poser.pugx.org/marcin-orlowski/symfony-discodevbar/v)](https://packagist.org/packages/marcin-orlowski/symfony-discodevbar)
-[![Monthly Downloads](https://poser.pugx.org/marcin-orlowski/symfony-discodevbar/d/monthly)](https://packagist.org/packages/marcin-orlowski/symfony-discodevbar)
-[![License](https://poser.pugx.org/marcin-orlowski/symfony-discodevbar/license)](https://packagist.org/packages/marcin-orlowski/symfony-discodevbar)
+[![Latest Stable Version](https://poser.pugx.org/marcin-orlowski/discodevbar-symfony/v)](https://packagist.org/packages/marcin-orlowski/discodevbar-symfony)
+[![Monthly Downloads](https://poser.pugx.org/marcin-orlowski/discodevbar-symfony/d/monthly)](https://packagist.org/packages/marcin-orlowski/discodevbar-symfony)
+[![License](https://poser.pugx.org/marcin-orlowski/discodevbar-symfony/license)](https://packagist.org/packages/marcin-orlowski/discodevbar-symfony)
 
 
 # Welcome!
