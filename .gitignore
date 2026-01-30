@@ -65,3 +65,4 @@ composer.lock
 
 .claude/
 CLAUDE.md
+package-lock.json
