@@ -33,7 +33,7 @@ startup, ensuring all links always point to the correct ports and services.
 ## Features
 
 - **Fully customizable via YAML** - Easy to configure and regenerate for different environments
-- **Flexible widget system** - Create buttons with Font Awesome icons, emoji, text labels, or any combination
+- **Flexible widget system** - Create buttons with Font Awesome icons, Symfony UX Icons, emoji, text labels, or any combination
 - **Display anything** - Add links to admin panels, database tools, email catchers, API docs, or any resource
 - **Action buttons** - Direct access to frequently-used tools and services
 - **Environment-aware** - Only loads in development environment, zero production overhead
@@ -45,12 +45,28 @@ startup, ensuring all links always point to the correct ports and services.
 - PHP 8.1 or higher
 - Symfony 6.4+, 7.0+, or 8.0+
 
+### Optional Dependencies
+
+- [`symfony/ux-icons`](https://symfony.com/bundles/ux-icons/current/index.html) - Required for `icon_type: ux` support (200,000+ icons)
+
+### Notes
+
+There's also [Laravel version](https://github.com/MarcinOrlowski/php-discotoolbar-laravel) of this package!
+
+[![Laravel](img/banner-laravel.webp)](https://github.com/MarcinOrlowski/php-discotoolbar-laravel)
+
 ## Installation
 
 Install via Composer:
 
 ```bash
 composer require --dev marcin-orlowski/disco-toolbar-symfony
+```
+
+For access to 200,000+ icons via [Symfony UX Icons](https://ux.symfony.com/icons) (recommended):
+
+```bash
+composer require symfony/ux-icons
 ```
 
 Register the bundle in `config/bundles.php`:
@@ -70,11 +86,13 @@ php bin/console assets:install --symlink
 
 ## Configuration
 
-Create a configuration file in your project root with widget configuration. The bundle will automatically
+Create a configuration file with widget configuration. The bundle will automatically
 detect and load the first file found (in order of preference):
 
-- `.disco.yaml` (recommended)
-- `.disco.yml`
+- `.disco.yaml` (project root)
+- `.disco.yml` (project root)
+- `config/packages/disco_toolbar.yaml` (Symfony convention)
+- `config/packages/disco_toolbar.yml`
 
 Example configuration that produces toolbar shown in the screenshot above:
 
@@ -117,8 +135,8 @@ widgets:
 | Property    |   Type   | Required | Description                                                                     |
 |-------------|:--------:|:--------:|---------------------------------------------------------------------------------|
 | `type`      | `string` |          | Widget type: `link` (default) or `close` (dismisses toolbar).                   |
-| `icon`*     | `string` |          | Optional icon to display. Can be Font Awesome class or emoji/text.              |
-| `icon_type` | `string` |          | Icon type: `fa` (Font Awesome, default) or `text` (emoji/plain text).           |
+| `icon`*     | `string` |          | Optional icon to display (Font Awesome class, UX Icons name, or emoji/text).    |
+| `icon_type` | `string` |          | Icon type: `fa` (Font Awesome, default), `ux` (Symfony UX Icons), or `text`.    |
 | `text`*     | `string` |          | Optional widget label to display alongside icon.                                |
 | `url`       | `string` |    *     | Link URL to redirect to once widget is clicked.                                 |
 | `target`    | `string` |          | Link target (e.g., `_blank`). Default: no target                                |
@@ -188,6 +206,38 @@ widgets:
       icon_type: "text"  # Use plain text/emoji
       url: "/admin"
 ```
+
+### Symfony UX Icons
+
+DiscoToolbar supports [Symfony UX Icons](https://ux.symfony.com/icons), which provides access to
+200,000+ icons from popular icon sets (Lucide, Heroicons, Font Awesome, and more) as inline SVGs.
+
+First, install the UX Icons package:
+
+```bash
+composer require symfony/ux-icons
+```
+
+Then use the `ux` icon type with icon names in the `set:name` format:
+
+```yaml
+widgets:
+  left:
+    - icon: "lucide:github"
+      icon_type: "ux"
+      url: "https://github.com"
+    - icon: "heroicons:home"
+      icon_type: "ux"
+      url: "/"
+    - icon: "fa6-solid:database"
+      icon_type: "ux"
+      url: "http://localhost:8080"
+```
+
+Browse available icons at [ux.symfony.com/icons](https://ux.symfony.com/icons).
+
+**Note:** If `symfony/ux-icons` is not installed, widgets with `icon_type: ux` will display
+the icon name in brackets as a fallback (e.g., `[lucide:github]`).
 
 ## Usage
 

@@ -24,4 +24,5 @@ enum IconType: string
 {
     case FONT_AWESOME = 'fa';
     case TEXT = 'text';
+    case UX_ICONS = 'ux';
 }

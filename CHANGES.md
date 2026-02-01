@@ -2,6 +2,13 @@
 
 # Changelog
 
+## 2.1.0 (2026-02-01)
+
+- [#007] Improved layout of expandable widgets with long titles by adding fade-out effect
+- [#054] Fixed version displayed as `2.0.0.0` instead of `2.0.0` when config file is missing
+- [#053] Added support for Symfony's UX-Icons: https://ux.symfony.com/icons
+- [#051] Added support for `config/packages/disco_toolbar.yaml` config location
+
 ## 2.0.0 (2026-01-30)
 
 - [#044] Renamed package to `marcin-orlowski/disco-toolbar-symfony`

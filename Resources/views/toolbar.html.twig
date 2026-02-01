@@ -44,7 +44,9 @@
                                {% if widget.title %}title="{{ widget.title }}"{% endif %}>
                                 <span class="disco-toolbar-link-content">
                                     {% if widget.icon %}
-                                        {% if widget.iconType.value == 'fa' %}
+                                        {% if widget.iconType.value == 'ux' %}
+                                            {{ disco_ux_icon(widget.icon) }}
+                                        {% elseif widget.iconType.value == 'fa' %}
                                             <i class="fa-solid {{ widget.icon }}"></i>
                                         {% else %}
                                             {{ widget.icon }}
@@ -76,7 +78,9 @@
                                {% if widget.title %}title="{{ widget.title }}"{% endif %}>
                                 <span class="disco-toolbar-link-content">
                                     {% if widget.icon %}
-                                        {% if widget.iconType.value == 'fa' %}
+                                        {% if widget.iconType.value == 'ux' %}
+                                            {{ disco_ux_icon(widget.icon) }}
+                                        {% elseif widget.iconType.value == 'fa' %}
                                             <i class="fa-solid {{ widget.icon }}"></i>
                                         {% else %}
                                             {{ widget.icon }}
