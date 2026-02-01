@@ -47,7 +47,7 @@ startup, ensuring all links always point to the correct ports and services.
 
 ### Notes
 
-There's also [Laravel version](https://github.com/MarcinOrlowski/php-discotoolbar-laravel) of this package! 
+There's also [Laravel version](https://github.com/MarcinOrlowski/php-discotoolbar-laravel) of this package!
 
 [![Laravel](img/banner-laravel.webp)](https://github.com/MarcinOrlowski/php-discotoolbar-laravel)
 
