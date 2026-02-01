@@ -45,6 +45,12 @@ startup, ensuring all links always point to the correct ports and services.
 - PHP 8.1 or higher
 - Symfony 6.4+, 7.0+, or 8.0+
 
+### Notes
+
+There's also [Laravel version](https://github.com/MarcinOrlowski/php-discotoolbar-laravel) of this package!
+
+[![Laravel](img/banner-laravel.webp)](https://github.com/MarcinOrlowski/php-discotoolbar-laravel)
+
 ## Installation
 
 Install via Composer:
