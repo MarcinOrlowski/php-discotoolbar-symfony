@@ -2,7 +2,7 @@
 
 # Changelog
 
-## 2.1.0 (TBD)
+## 2.1.0 (2026-02-01)
 
 - [#007] Improved layout of expandable widgets with long titles by adding fade-out effect
 - [#054] Fixed version displayed as `2.0.0.0` instead of `2.0.0` when config file is missing

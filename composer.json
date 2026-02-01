@@ -2,7 +2,7 @@
   "name": "marcin-orlowski/disco-toolbar-symfony",
   "description": "Customizable toolbar for Symfony projects",
   "type": "symfony-bundle",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "license": "MIT",
   "provide": {
     "marcin-orlowski/discotoolbar-symfony": "self.version",
