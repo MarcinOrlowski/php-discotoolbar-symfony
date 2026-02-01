@@ -21,7 +21,9 @@ declare(strict_types=1);
 namespace MarcinOrlowski\DiscoToolbar\Twig;
 
 use MarcinOrlowski\DiscoToolbar\Service\DiscoToolbarService;
+use Twig\Environment;
 use Twig\Extension\AbstractExtension;
+use Twig\Markup;
 use Twig\TwigFunction;
 
 /**
@@ -30,7 +32,8 @@ use Twig\TwigFunction;
 class DiscoToolbarExtension extends AbstractExtension
 {
     public function __construct(
-        private readonly DiscoToolbarService $discoToolbarService
+        private readonly DiscoToolbarService $discoToolbarService,
+        private readonly Environment $twig
     ) {
     }
 
@@ -46,6 +49,10 @@ class DiscoToolbarExtension extends AbstractExtension
                 $this,
                 'getDiscoToolbarData',
             ]),
+            new TwigFunction('disco_ux_icon', [
+                $this,
+                'renderUxIcon',
+            ], ['is_safe' => ['html']]),
         ];
     }
 
@@ -55,5 +62,22 @@ class DiscoToolbarExtension extends AbstractExtension
     public function getDiscoToolbarData(): \MarcinOrlowski\DiscoToolbar\Dto\DiscoToolbarData
     {
         return $this->discoToolbarService->getDiscoToolbarData();
+    }
+
+    /**
+     * Renders a UX Icon if symfony/ux-icons is installed, otherwise returns fallback
+     */
+    public function renderUxIcon(string $icon): Markup|string
+    {
+        try {
+            if ($this->twig->getFunction('ux_icon') !== null) {
+                $template = $this->twig->createTemplate('{{ ux_icon(icon) }}');
+                return new Markup($template->render(['icon' => $icon]), 'UTF-8');
+            }
+        } catch (\Exception) {
+            // ux_icon function not available
+        }
+
+        return \sprintf('[%s]', \htmlspecialchars($icon, \ENT_QUOTES, 'UTF-8'));
     }
 }
