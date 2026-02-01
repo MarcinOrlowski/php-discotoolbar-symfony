@@ -183,7 +183,7 @@ class DiscoToolbarService
     {
         $version = null;
         try {
-            $version = InstalledVersions::getVersion('marcin-orlowski/disco-toolbar-symfony');
+            $version = InstalledVersions::getPrettyVersion('marcin-orlowski/disco-toolbar-symfony');
         } catch (\Exception) {
             // do nothing
         }
