@@ -117,6 +117,22 @@
 .disco-toolbar-widget-expand {
     flex: 1 1 0;
     min-width: 0;
+    overflow: hidden;
+}
+
+/* Expandable widget link - fills container width */
+.disco-toolbar-widget-expand .disco-toolbar-link {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Expandable widget content - fade out effect on right edge */
+.disco-toolbar-widget-expand .disco-toolbar-link-content {
+    overflow: hidden;
+    padding-right: 24px;
+    mask-image: linear-gradient(to right, black calc(100% - 50px), transparent 100%);
+    /* stylelint-disable-next-line property-no-vendor-prefix -- Safari compatibility */
+    -webkit-mask-image: linear-gradient(to right, black calc(100% - 50px), transparent 100%);
 }
 
 /* DiscoDevBar links */
