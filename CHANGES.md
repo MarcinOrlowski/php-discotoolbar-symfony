@@ -5,6 +5,7 @@
 ## 2.1.0 (TBD)
 
 - [#054] Fixed version displayed as `2.0.0.0` instead of `2.0.0` when config file is missing
+- [#053] Added support for Symfony's UX-Icons: https://ux.symfony.com/icons
 
 ## 2.0.0 (2026-01-30)
 
