@@ -70,15 +70,9 @@ class DiscoToolbarExtension extends AbstractExtension
     public function renderUxIcon(string $icon): Markup|string
     {
         try {
-            $function = $this->twig->getFunction('ux_icon');
-            if ($function !== null) {
-                $callable = $function->getCallable();
-                if (\is_callable($callable)) {
-                    $result = $callable($icon);
-                    if ($result instanceof Markup || \is_string($result)) {
-                        return $result;
-                    }
-                }
+            if ($this->twig->getFunction('ux_icon') !== null) {
+                $template = $this->twig->createTemplate('{{ ux_icon(icon) }}');
+                return new Markup($template->render(['icon' => $icon]), 'UTF-8');
             }
         } catch (\Exception) {
             // ux_icon function not available
