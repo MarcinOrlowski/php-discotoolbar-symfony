@@ -28,11 +28,13 @@ use Symfony\Component\Yaml\Yaml;
 class DiscoToolbarService
 {
     /**
-     * List of supported config filenames (in order of preference)
+     * List of supported config paths (in order of preference)
      */
-    private const CONFIG_FILES = [
+    private const CONFIG_PATHS = [
         '.disco.yaml',
         '.disco.yml',
+        'config/packages/disco_toolbar.yaml',
+        'config/packages/disco_toolbar.yml',
     ];
 
     /**
@@ -58,7 +60,7 @@ class DiscoToolbarService
 
         // Default: show error message when no config found
         if ($configPath === null) {
-            $errorMessage = 'Config file not found: ' . self::CONFIG_FILES[0];
+            $errorMessage = 'Config file not found. Create ' . self::CONFIG_PATHS[0];
             return new DiscoToolbarData(
                 left:                [],
                 right:               [],
@@ -125,14 +127,14 @@ class DiscoToolbarService
     }
 
     /**
-     * Find the first existing config file from the list of supported filenames
+     * Find the first existing config file from the list of supported paths
      *
      * @return string|null Full path to config file or null if none found
      */
     private function findConfigFile(): ?string
     {
-        foreach (self::CONFIG_FILES as $filename) {
-            $path = $this->projectDir . '/' . $filename;
+        foreach (self::CONFIG_PATHS as $configPath) {
+            $path = $this->projectDir . '/' . $configPath;
             if (\file_exists($path)) {
                 return $path;
             }

@@ -86,11 +86,13 @@ php bin/console assets:install --symlink
 
 ## Configuration
 
-Create a configuration file in your project root with widget configuration. The bundle will automatically
+Create a configuration file with widget configuration. The bundle will automatically
 detect and load the first file found (in order of preference):
 
-- `.disco.yaml` (recommended)
-- `.disco.yml`
+- `.disco.yaml` (project root)
+- `.disco.yml` (project root)
+- `config/packages/disco_toolbar.yaml` (Symfony convention)
+- `config/packages/disco_toolbar.yml`
 
 Example configuration that produces toolbar shown in the screenshot above:
 
