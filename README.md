@@ -124,7 +124,7 @@ widgets:
 |-------------|:--------:|:--------:|---------------------------------------------------------------------------------|
 | `type`      | `string` |          | Widget type: `link` (default) or `close` (dismisses toolbar).                   |
 | `icon`*     | `string` |          | Optional icon to display. Can be Font Awesome class or emoji/text.              |
-| `icon_type` | `string` |          | Icon type: `fa` (Font Awesome, default) or `text` (emoji/plain text).           |
+| `icon_type` | `string` |          | Icon type: `fa` (Font Awesome, default), `ux` (Symfony UX Icons), or `text`.    |
 | `text`*     | `string` |          | Optional widget label to display alongside icon.                                |
 | `url`       | `string` |    *     | Link URL to redirect to once widget is clicked.                                 |
 | `target`    | `string` |          | Link target (e.g., `_blank`). Default: no target                                |
@@ -194,6 +194,38 @@ widgets:
       icon_type: "text"  # Use plain text/emoji
       url: "/admin"
 ```
+
+### Symfony UX Icons
+
+DiscoToolbar supports [Symfony UX Icons](https://ux.symfony.com/icons), which provides access to
+200,000+ icons from popular icon sets (Lucide, Heroicons, Font Awesome, and more) as inline SVGs.
+
+First, install the UX Icons package:
+
+```bash
+composer require symfony/ux-icons
+```
+
+Then use the `ux` icon type with icon names in the `set:name` format:
+
+```yaml
+widgets:
+  left:
+    - icon: "lucide:github"
+      icon_type: "ux"
+      url: "https://github.com"
+    - icon: "heroicons:home"
+      icon_type: "ux"
+      url: "/"
+    - icon: "fa6-solid:database"
+      icon_type: "ux"
+      url: "http://localhost:8080"
+```
+
+Browse available icons at [ux.symfony.com/icons](https://ux.symfony.com/icons).
+
+**Note:** If `symfony/ux-icons` is not installed, widgets with `icon_type: ux` will display
+the icon name in brackets as a fallback (e.g., `[lucide:github]`).
 
 ## Usage
 

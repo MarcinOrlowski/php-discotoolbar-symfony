@@ -34,6 +34,9 @@
     "phpstan/phpstan-symfony": "^2.0",
     "squizlabs/php_codesniffer": "^3.13"
   },
+  "suggest": {
+    "symfony/ux-icons": "Required for icon_type: ux support"
+  },
   "autoload": {
     "psr-4": {
       "MarcinOrlowski\\DiscoToolbar\\": "src/"
