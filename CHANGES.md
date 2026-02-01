@@ -2,6 +2,10 @@
 
 # Changelog
 
+## 2.1.0 (TBD)
+
+- [#054] Fixed version displayed as `2.0.0.0` instead of `2.0.0` when config file is missing
+
 ## 2.0.0 (2026-01-30)
 
 - [#044] Renamed package to `marcin-orlowski/disco-toolbar-symfony`
